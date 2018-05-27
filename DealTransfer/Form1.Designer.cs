@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.dgvInputData = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnOpenInputFile = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnPasteData = new System.Windows.Forms.Button();
             this.AccountId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentDealNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentDeal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentBal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LitFlowStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnOpenInputFile = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnPasteData = new System.Windows.Forms.Button();
+            this.txtNoOfRecords = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInputData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,56 +53,11 @@
             this.CurrentBal,
             this.LitFlowStatus});
             this.dgvInputData.Location = new System.Drawing.Point(26, 103);
-            this.dgvInputData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvInputData.Margin = new System.Windows.Forms.Padding(2);
             this.dgvInputData.Name = "dgvInputData";
             this.dgvInputData.RowTemplate.Height = 33;
             this.dgvInputData.Size = new System.Drawing.Size(897, 530);
             this.dgvInputData.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(380, 67);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Source Deal Contents";
-            // 
-            // btnOpenInputFile
-            // 
-            this.btnOpenInputFile.Location = new System.Drawing.Point(652, 19);
-            this.btnOpenInputFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnOpenInputFile.Name = "btnOpenInputFile";
-            this.btnOpenInputFile.Size = new System.Drawing.Size(114, 29);
-            this.btnOpenInputFile.TabIndex = 2;
-            this.btnOpenInputFile.Text = "Load Accounts";
-            this.btnOpenInputFile.UseVisualStyleBackColor = true;
-            this.btnOpenInputFile.Click += new System.EventHandler(this.btnOpenInputFile_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(793, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "File must be in CSV format";
-            // 
-            // btnPasteData
-            // 
-            this.btnPasteData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnPasteData.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPasteData.Location = new System.Drawing.Point(26, 27);
-            this.btnPasteData.Name = "btnPasteData";
-            this.btnPasteData.Size = new System.Drawing.Size(140, 48);
-            this.btnPasteData.TabIndex = 4;
-            this.btnPasteData.Text = "Paste Data";
-            this.btnPasteData.UseVisualStyleBackColor = false;
-            this.btnPasteData.Click += new System.EventHandler(this.btnPasteData_Click);
             // 
             // AccountId
             // 
@@ -131,17 +88,80 @@
             this.LitFlowStatus.Name = "LitFlowStatus";
             this.LitFlowStatus.Width = 300;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(380, 67);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 19);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Source Deal Contents";
+            // 
+            // btnOpenInputFile
+            // 
+            this.btnOpenInputFile.Location = new System.Drawing.Point(652, 19);
+            this.btnOpenInputFile.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOpenInputFile.Name = "btnOpenInputFile";
+            this.btnOpenInputFile.Size = new System.Drawing.Size(114, 29);
+            this.btnOpenInputFile.TabIndex = 2;
+            this.btnOpenInputFile.Text = "Load Accounts";
+            this.btnOpenInputFile.UseVisualStyleBackColor = true;
+            this.btnOpenInputFile.Click += new System.EventHandler(this.btnOpenInputFile_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(793, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(164, 18);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "File must be in CSV format";
+            // 
+            // btnPasteData
+            // 
+            this.btnPasteData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnPasteData.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPasteData.Location = new System.Drawing.Point(26, 27);
+            this.btnPasteData.Name = "btnPasteData";
+            this.btnPasteData.Size = new System.Drawing.Size(140, 48);
+            this.btnPasteData.TabIndex = 4;
+            this.btnPasteData.Text = "Paste Data";
+            this.btnPasteData.UseVisualStyleBackColor = false;
+            this.btnPasteData.Click += new System.EventHandler(this.btnPasteData_Click);
+            // 
+            // txtNoOfRecords
+            // 
+            this.txtNoOfRecords.Location = new System.Drawing.Point(318, 29);
+            this.txtNoOfRecords.Name = "txtNoOfRecords";
+            this.txtNoOfRecords.Size = new System.Drawing.Size(100, 20);
+            this.txtNoOfRecords.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(215, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Record Count:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 663);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtNoOfRecords);
             this.Controls.Add(this.btnPasteData);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnOpenInputFile);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvInputData);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -163,6 +183,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CurrentDeal;
         private System.Windows.Forms.DataGridViewTextBoxColumn CurrentBal;
         private System.Windows.Forms.DataGridViewTextBoxColumn LitFlowStatus;
+        private System.Windows.Forms.TextBox txtNoOfRecords;
+        private System.Windows.Forms.Label label3;
     }
 }
 
